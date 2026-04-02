@@ -6,11 +6,12 @@
   <title>Tirage Fine Art & Contre-collage à Lille – UH5 Roubaix</title>
   <meta name="description" content="UH5 réalise vos tirages Fine Art et contre-collages sur-mesure à Lille. Qualité muséale, encres d'archivage, grands formats jusqu'à 160 cm. Atelier à La Madeleine (Nord).">
   <meta name="keywords" content="tirage fine art Lille, impression pigmentaire Nord, contre-collage photo Hauts-de-France, tirage qualité muséale Roubaix, grand format photographique, impression archivage photo">
-  <link rel="canonical" href="https://www.uh5.fr/tirage-fine-art-lille">
+  <link rel="canonical" href="https://www.uh5.fr/tirage-contrecollag.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
+  
+ <style>
     :root {
       --black: #0e0d0c;
       --off-white: #f5f3ee;
@@ -57,7 +58,15 @@
       text-transform: uppercase;
       color: var(--black);
       text-decoration: none;
+      position: relative;
+      z-index: 201;
     }
+    .nav-logo-img {
+      size: 48px;
+    }
+
+    /* Burger button & nav links */
+
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -73,6 +82,131 @@
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--text); }
+
+
+    .nav-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      position: relative;
+      z-index: 201;
+    }
+    .nav-burger span {
+      display: block;
+      height: 1px;
+      background: var(--black);
+      transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s, width .3s;
+      transform-origin: center;
+    }
+    .nav-burger span:nth-child(1) { width: 24px; }
+    .nav-burger span:nth-child(2) { width: 16px; }
+    .nav-burger span:nth-child(3) { width: 20px; }
+
+    /* Open state */
+    .nav-burger.is-open span:nth-child(1) {
+      width: 22px;
+      transform: translateY(6px) rotate(45deg);
+    }
+    .nav-burger.is-open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .nav-burger.is-open span:nth-child(3) {
+      width: 22px;
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Menu overlay */
+    .nav-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 199;
+      background: rgba(245, 243, 238, 0.98);
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 3rem 3rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-menu.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .nav-menu ul {
+      list-style: none;
+      margin-bottom: auto;
+    }
+    .nav-menu ul li {
+      overflow: hidden;
+    }
+    .nav-menu ul li a {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--black);
+      text-decoration: none;
+      line-height: 1.1;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: color .2s, transform .4s cubic-bezier(.4,0,.2,1), opacity .4s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-menu ul li a em {
+      font-style: italic;
+      color: var(--accent-dark);
+    }
+    .nav-menu.is-open ul li a {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .nav-menu.is-open ul li:nth-child(1) a { transition-delay: .05s; }
+    .nav-menu.is-open ul li:nth-child(2) a { transition-delay: .1s; }
+    .nav-menu.is-open ul li:nth-child(3) a { transition-delay: .15s; }
+    .nav-menu.is-open ul li:nth-child(4) a { transition-delay: .2s; }
+    .nav-menu.is-open ul li:nth-child(5) a { transition-delay: .25s; }
+    .nav-menu ul li a:hover { color: var(--accent-dark); }
+    .nav-menu ul li a.active { color: var(--accent-dark); }
+
+    .nav-menu-footer {
+      border-top: 1px solid var(--light-gray);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .4s .3s, transform .4s .3s;
+    }
+    .nav-menu.is-open .nav-menu-footer {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-menu-address {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      line-height: 2;
+    }
+    .nav-menu-tel {
+      text-align: right;
+      font-size: .78rem;
+      font-weight: 300;
+      color: var(--warm-gray);
+      line-height: 2;
+    }
 
     /* HERO */
     .hero {
@@ -583,26 +717,79 @@
       .cc-supports { grid-template-columns: 1fr; }
       .cta-buttons { flex-direction: column; }
     }
+
+
+      @media (width > 960px) {
+    .nav-links {
+    display : flex ;
+      }
+    .nav-burger {
+    display : none ;
+      }
+    }
+
+     @media (width < 960px) {
+   
+    .nav-links {
+    display : none ;
+      }
+    .nav-burger {
+    display : flex ;
+      }
+    }
+
+
   </style>
+
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav>
-    <a href="https://www.uh5.fr/" class="nav-logo">UH5</a>
+ <nav>
+        <a href="/" class="nav-logo"><img class="nav-logo-img" src="logo-uh5.png" alt="Logo UH5"></a>
+
+
     <ul class="nav-links">
-      <li><a href="https://www.uh5.fr/">Accueil</a></li>
-      <li><a href="/tirage-fine-art-lille">Tirage & Contre-collage</a></li>
-      <li><a href="/encadrement-sur-mesure-lille">Encadrement</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="tirage-contrecollage.html">Tirage & Contre-collage</a></li>
+      <li><a href="encadrement.html">Encadrement</a></li>
+      <li><a href="xx">Journal</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- Menu overlay -->
+  <div class="nav-menu" id="nav-menu" role="dialog" aria-label="Navigation principale">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="tirage-contrecollage.html">Tirage & Contre-collage</a></li>
+      <li><a href="encadrement.html">Encadrement</a></li>
+      <li><a href="xx">Journal</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-menu-footer">
+      <div class="nav-menu-address">
+        85, rue Saint-Charles<br>
+        59110 La Madeleine
+      </div>
+      <div class="nav-menu-tel">
+        +33 6 43 56 63 55<br>
+        +33 6 10 52 23 51
+      </div>
+    </div>
+  </div>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
-    <div class="hero-line"></div>
+    
     <div class="hero-content">
       <span class="hero-eyebrow">Atelier UH5 — La Madeleine, Lille</span>
       <h1 class="hero-title">Tirage Fine Art<br><em>& Contre-collage</em><br>sur-mesure</h1>
@@ -611,11 +798,7 @@
         Discutons de votre projet <span class="hero-cta-arrow">→</span>
       </a>
     </div>
-    <div class="hero-meta">
-      Hauts-de-France<br>
-      Laize jusqu'à 160 cm<br>
-      Qualité archivage
-    </div>
+    
   </section>
 
   <!-- Tirage Fine Art -->
@@ -756,8 +939,8 @@
       <div class="section-header">
         <div class="section-num" style="color: var(--light-gray);">03</div>
         <div>
-          <div class="section-label">Pourquoi UH5</div>
-          <h2 class="section-title">Ce que vous gagnez</h2>
+          <div class="section-label">Ce que nous faisons de mieux</div>
+          <h2 class="section-title">Pourquoi UH5 ?</h2>
         </div>
       </div>
       <div class="benefits-grid">
@@ -801,25 +984,7 @@
     </div>
   </section>
 
-  <!-- Expertise bar -->
-  <div class="expertise-bar">
-    <div class="container">
-      <div class="expertise-inner">
-        <span class="expertise-label">Atelier UH5</span>
-        <div class="expertise-items">
-          <span class="expertise-item-text">Tirage Fine Art</span>
-          <span class="expertise-divider">·</span>
-          <span class="expertise-item-text">Contre-collage</span>
-          <span class="expertise-divider">·</span>
-          <span class="expertise-item-text">Encadrement sur-mesure</span>
-          <span class="expertise-divider">·</span>
-          <span class="expertise-item-text">Grands formats</span>
-          <span class="expertise-divider">·</span>
-          <span class="expertise-item-text">Qualité muséale</span>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- CTA -->
   <section class="cta-section" id="contact">
@@ -830,7 +995,7 @@
         <p class="cta-text">Photographes, galeries, collectionneurs — apportez votre fichier ou votre œuvre, nous vous proposons une consultation sans engagement dans notre atelier à La Madeleine, près de Lille.</p>
         <div class="cta-buttons">
           <a href="mailto:contact@uh5.fr" class="btn-primary">Nous contacter →</a>
-          <a href="https://www.uh5.fr/" class="btn-secondary">Voir le site</a>
+          
         </div>
         <div class="cta-contact">
           <div class="contact-item">
@@ -848,13 +1013,51 @@
 
   <!-- Footer -->
   <footer>
-    <span class="footer-logo">UH5</span>
+    <span class="footer-logo"><img class="nav-logo-img" src="logo-uh5-w.png" alt="Logo UH5"></span>
+    
     <ul class="footer-links">
-      <li><a href="https://www.uh5.fr/">Accueil</a></li>
-      <li><a href="/encadrement-sur-mesure-lille">Encadrement</a></li>
-      <li><a href="https://www.uh5.fr/mentions-legales.html">Mentions légales</a></li>
+      <li><a href="home.html">Accueil</a></li>
+      <li><a href="tirage-contrecollage.html">Tirage & Contre-collage</a></li>
+      <li><a href="encadrement.html">Encadrement</a></li>
+      <li><a href="xx">Journal</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mentions_legales.html">Mentions légales</a></li>
     </ul>
   </footer>
+
+
+  <script>
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Fermer le menu au clic sur un lien
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Fermer avec Échap
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        burger.focus();
+      }
+    });
+  </script>
 
 </body>
 </html>

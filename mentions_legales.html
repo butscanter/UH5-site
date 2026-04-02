@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encadrement sur-mesure à Lille – Maître Encadreur – UH5</title>
-  <meta name="description" content="UH5 encadre vos œuvres, photographies et documents avec la rigueur d'un maître encadreur et le regard d'une photographe d'art. Atelier à La Madeleine, Lille (Nord). Sur-mesure, conservation, galerie.">
-  <meta name="keywords" content="encadrement sur-mesure Lille, encadreur Roubaix, encadrement œuvre d'art Nord, caisse américaine Hauts-de-France, encadrement galerie Lille, encadrement photo fine art, maître encadreur Hauts-de-France">
-  <link rel="canonical" href="https://www.uh5.fr/encadrement.html">
+  <title>UH5 – Tirage Fine Art, Contre-collage & Encadrement à Lille</title>
+  <meta name="description" content="UH5 est un atelier spécialisé dans le tirage Fine Art, le contre-collage et l'encadrement sur-mesure à La Madeleine, près de Lille. Qualité muséale, grands formats, experts passionnés.">
+  <meta name="keywords" content="tirage fine art Lille, encadrement sur-mesure Nord, contre-collage photo Hauts-de-France, atelier photo Roubaix, impression pigmentaire Lille, encadreur Lille">
+  <link rel="canonical" href="https://www.uh5.fr/mentions_legales.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   
-
- <style>
+<style>
     :root {
       --black: #0e0d0c;
       --off-white: #f5f3ee;
@@ -26,9 +25,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: var(--sans);
       background: var(--off-white);
@@ -38,11 +35,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
+    /* ─── NAV ─── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 100;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -62,7 +59,8 @@
       position: relative;
       z-index: 201;
     }
-    .nav-logo-img {
+
+       .nav-logo-img {
       size: 48px;
     }
 
@@ -83,7 +81,6 @@
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--text); }
-
 
     .nav-burger {
       display: flex;
@@ -209,19 +206,22 @@
       line-height: 2;
     }
 
-    /* HERO */
+    /* ─── HERO ─── */
     .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: flex-end;
-      padding: 7rem 3rem 5rem;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
     }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
+    .hero-left {
       background: linear-gradient(160deg, #1a1814 0%, #2e2a22 60%, #3d3628 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 7rem 3rem 5rem;
+      position: relative;
+      overflow: hidden;
     }
     .hero-grain {
       position: absolute;
@@ -230,20 +230,7 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 180px;
     }
-    .hero-line {
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 48%;
-      width: 1px;
-      background: rgba(181,164,138,.15);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      width: 100%;
-      margin: 0 auto;
-    }
+    .hero-left-content { position: relative; z-index: 2; }
     .hero-eyebrow {
       display: inline-block;
       font-size: .72rem;
@@ -255,23 +242,19 @@
     }
     .hero-title {
       font-family: var(--serif);
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(2.8rem, 4.5vw, 5rem);
       font-weight: 300;
       line-height: 1.05;
       color: #f0ece3;
-      margin-bottom: 1.5rem;
-      max-width: 700px;
+      margin-bottom: 1.75rem;
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-desc {
-      font-size: .95rem;
+    .hero-title em { font-style: italic; color: var(--accent); }
+    .hero-tagline {
+      font-size: .93rem;
       font-weight: 300;
-      color: rgba(240,236,227,.6);
-      max-width: 440px;
+      color: rgba(240,236,227,.55);
       line-height: 1.8;
+      max-width: 90%;
       margin-bottom: 2.5rem;
     }
     .hero-cta {
@@ -289,27 +272,75 @@
       transition: background .2s, gap .2s;
     }
     .hero-cta:hover { background: #c4b49a; gap: 1rem; }
-    .hero-cta-arrow { font-size: 1rem; }
-    .hero-meta {
+
+    .hero-right {
+      background: var(--off-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 7rem 3rem 5rem;
+      border-left: 1px solid var(--light-gray);
+      position: relative;
+    }
+    .hero-right-top {
       position: absolute;
-      right: 3rem;
-      bottom: 5rem;
-      text-align: right;
-      color: rgba(240,236,227,.35);
+      top: 7rem; left: 3rem; right: 3rem;
+    }
+    .hero-address {
       font-size: .75rem;
-      letter-spacing: .1em;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
       line-height: 2;
     }
+    .hero-services {
+      border-top: 1px solid var(--light-gray);
+      padding-top: 2rem;
+    }
+    .hero-services-label {
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 1.5rem;
+    }
+    .hero-service-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      text-decoration: none;
+      transition: padding-left .2s;
+    }
+    .hero-service-item:hover { padding-left: .5rem; }
+    .hero-service-item h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--black);
+    }
+    .hero-service-item span {
+      font-size: .78rem;
+      color: var(--warm-gray);
+      letter-spacing: .05em;
+    }
+    .hero-service-arrow {
+      font-size: .9rem;
+      color: var(--accent-dark);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .hero-service-item:hover .hero-service-arrow { opacity: 1; }
 
-    /* LAYOUT */
+    /* ─── LAYOUT ─── */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 3rem;
     }
-
-    /* SECTION BASE */
     section { padding: 6rem 0; }
+
     .section-header {
       display: flex;
       align-items: flex-start;
@@ -342,238 +373,288 @@
     }
     .section-title em { font-style: italic; color: var(--accent-dark); }
 
-    /* TIRAGE SECTION */
-    .tirage-section { background: var(--off-white); }
-    .tirage-grid {
+    /* ─── QUI SOMMES-NOUS ─── */
+    .about-section { background: var(--off-white); }
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: start;
     }
-    .tirage-body p {
+    .about-body p {
       font-size: .95rem;
       font-weight: 300;
       line-height: 1.85;
       color: #4a4740;
       margin-bottom: 1.25rem;
     }
-    .specs-list {
-      list-style: none;
+    .about-values {
       margin-top: 2rem;
       border-top: 1px solid var(--light-gray);
-      padding-top: 1.5rem;
     }
-    .specs-list li {
+    .about-value {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: .65rem 0;
+      gap: 1.25rem;
+      padding: 1.1rem 0;
       border-bottom: 1px solid var(--light-gray);
-      font-size: .85rem;
+      align-items: baseline;
     }
-    .specs-list .spec-key {
+    .about-value-label {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      flex-shrink: 0;
+      width: 90px;
+    }
+    .about-value p {
+      font-size: .87rem;
       font-weight: 300;
       color: var(--warm-gray);
-      letter-spacing: .05em;
+      line-height: 1.6;
+      margin-bottom: 0;
     }
-    .specs-list .spec-val {
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--light-gray);
+    }
+    .team-member {
+      background: #fff;
+      padding: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .team-member-info { flex: 1; }
+    .team-member-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
       font-weight: 400;
-      color: var(--text);
-      text-align: right;
+      color: var(--black);
+      margin-bottom: .2rem;
     }
-    .tirage-cards {
+    .team-member-role {
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: .6rem;
+    }
+    .team-member-desc {
+      font-size: .85rem;
+      font-weight: 300;
+      color: var(--warm-gray);
+      line-height: 1.7;
+    }
+    .team-member-initial {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--light-gray);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    /* ─── SERVICES ─── */
+    .services-section { background: var(--black); }
+    .services-section .section-num { color: rgba(255,255,255,.05); }
+    .services-section .section-label { color: var(--accent); }
+    .services-section .section-title { color: #f0ece3; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.06);
+    }
+    .service-card {
+      background: #1a1814;
+      padding: 2.5rem 2rem 2rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-    }
-    .tirage-card {
-      padding: 1.5rem;
-      border: 1px solid var(--light-gray);
-      background: #fff;
+      transition: background .25s;
       position: relative;
-      transition: border-color .2s;
+      overflow: hidden;
     }
-    .tirage-card:hover { border-color: var(--accent); }
-    .tirage-card::before {
+    .service-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 2px; height: 100%;
+      top: 0; left: 0; right: 0;
+      height: 1px;
       background: var(--accent);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform .25s;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
     }
-    .tirage-card:hover::before { transform: scaleY(1); }
-    .tirage-card h3 {
+    .service-card:hover { background: #221e18; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card-num {
       font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: .4rem;
-      color: var(--black);
-    }
-    .tirage-card p {
       font-size: .85rem;
       font-weight: 300;
-      color: var(--warm-gray);
-      line-height: 1.7;
+      color: rgba(181,164,138,.4);
+      letter-spacing: .1em;
     }
-
-    /* CONTRE-COLLAGE */
-    .contrecollage-section {
-      background: var(--black);
+    .service-card h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
       color: #f0ece3;
+      line-height: 1.2;
     }
-    .contrecollage-section .section-num { color: rgba(255,255,255,.06); }
-    .contrecollage-section .section-label { color: var(--accent); }
-    .contrecollage-section .section-title { color: #f0ece3; }
-    .cc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .cc-body p {
-      font-size: .95rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: rgba(240,236,227,.65);
-      margin-bottom: 1.25rem;
-    }
-    .cc-supports {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .75rem;
-      margin-top: 2rem;
-    }
-    .cc-support {
-      padding: 1rem 1.25rem;
-      border: 1px solid rgba(255,255,255,.1);
+    .service-card p {
       font-size: .85rem;
-      font-weight: 300;
-      color: rgba(240,236,227,.8);
-      letter-spacing: .03em;
-    }
-    .cc-process {
-      padding-left: 2rem;
-      border-left: 1px solid rgba(181,164,138,.2);
-    }
-    .cc-process-title {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--accent);
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    .cc-step {
-      display: flex;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .cc-step-num {
-      font-family: var(--serif);
-      font-size: .85rem;
-      font-weight: 300;
-      color: rgba(181,164,138,.5);
-      padding-top: .1rem;
-      flex-shrink: 0;
-      width: 24px;
-    }
-    .cc-step-content h4 {
-      font-size: .9rem;
-      font-weight: 400;
-      color: #f0ece3;
-      margin-bottom: .25rem;
-    }
-    .cc-step-content p {
-      font-size: .83rem;
       font-weight: 300;
       color: rgba(240,236,227,.5);
-      line-height: 1.7;
-      margin-bottom: 0;
+      line-height: 1.75;
+      flex: 1;
     }
-
-    /* BENEFITS */
-    .benefits-section { background: #fff; }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
+    .service-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap .2s;
+      margin-top: .5rem;
     }
-    .benefit-item {
-      padding: 2.5rem 1.75rem;
-      background: var(--off-white);
-      transition: background .2s;
+    .service-card-link:hover { gap: .8rem; }
+    .service-specs {
+      margin-top: .5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,.07);
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
     }
-    .benefit-item:hover { background: #eceae3; }
-    .benefit-icon {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 1.25rem;
+    .service-spec {
+      font-size: .78rem;
+      font-weight: 300;
+      color: rgba(240,236,227,.3);
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: .5rem;
     }
-    .benefit-icon svg { stroke: var(--accent-dark); }
-    .benefit-item h3 {
+    .service-spec::before {
+      content: '·';
+      color: var(--accent);
+    }
+
+    /* ─── ENGAGEMENT ─── */
+    .engagement-section { background: var(--off-white); border-top: 1px solid var(--light-gray); }
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--light-gray);
+    }
+    .engagement-item {
+      background: var(--off-white);
+      padding: 2.5rem 2rem;
+      transition: background .2s;
+    }
+    .engagement-item:hover { background: #eceae3; }
+    .engagement-num {
       font-family: var(--serif);
-      font-size: 1.05rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .engagement-item h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
       font-weight: 400;
       color: var(--black);
       margin-bottom: .5rem;
     }
-    .benefit-item p {
-      font-size: .83rem;
+    .engagement-item p {
+      font-size: .85rem;
       font-weight: 300;
       color: var(--warm-gray);
       line-height: 1.75;
     }
 
-    /* EXPERTISE BAR */
-    .expertise-bar {
-      padding: 4rem 0;
-      background: var(--off-white);
-      border-top: 1px solid var(--light-gray);
-      border-bottom: 1px solid var(--light-gray);
+    /* ─── ATELIER STRIP ─── */
+    .atelier-strip {
+      background: var(--black);
+      padding: 5rem 0;
+      overflow: hidden;
     }
-    .expertise-inner {
+    .atelier-strip-inner {
       display: flex;
       align-items: center;
       gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 3rem;
     }
-    .expertise-label {
+    .atelier-strip-text { flex: 1; }
+    .atelier-strip-label {
       font-size: .72rem;
-      letter-spacing: .15em;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--warm-gray);
-      white-space: nowrap;
-      flex-shrink: 0;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
-    .expertise-items {
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .expertise-item-text {
+    .atelier-strip-title {
       font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: #f0ece3;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
     }
-    .expertise-divider {
-      color: var(--light-gray);
-      font-size: .75rem;
+    .atelier-strip-title em { font-style: italic; }
+    .atelier-strip-desc {
+      font-size: .9rem;
+      font-weight: 300;
+      color: rgba(240,236,227,.5);
+      line-height: 1.8;
+    }
+    .atelier-strip-visual {
+      flex-shrink: 0;
+      width: 340px;
+      height: 220px;
+      border: 1px solid rgba(255,255,255,.08);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .atelier-strip-visual::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(181,164,138,.15);
+    }
+    .atelier-placeholder {
+      font-family: var(--serif);
+      font-size: .85rem;
+      font-style: italic;
+      color: rgba(240,236,227,.15);
+      letter-spacing: .1em;
     }
 
-    /* CTA */
+    /* ─── CTA FINAL ─── */
     .cta-section {
       background: #1e1c18;
       padding: 7rem 0;
     }
-    .cta-inner {
-      max-width: 600px;
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
     }
+    .cta-left { }
     .cta-eyebrow {
       font-size: .72rem;
       letter-spacing: .18em;
@@ -583,7 +664,7 @@
     }
     .cta-title {
       font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
       color: #f0ece3;
       line-height: 1.15;
@@ -593,7 +674,7 @@
     .cta-text {
       font-size: .93rem;
       font-weight: 300;
-      color: rgba(240,236,227,.55);
+      color: rgba(240,236,227,.5);
       line-height: 1.8;
       margin-bottom: 2.5rem;
     }
@@ -622,8 +703,8 @@
       align-items: center;
       gap: .6rem;
       padding: .9rem 2.25rem;
-      border: 1px solid rgba(255,255,255,.2);
-      color: rgba(240,236,227,.7);
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(240,236,227,.65);
       font-size: .82rem;
       font-weight: 400;
       letter-spacing: .08em;
@@ -631,30 +712,59 @@
       text-decoration: none;
       transition: border-color .2s, color .2s;
     }
-    .btn-secondary:hover { border-color: rgba(255,255,255,.5); color: #f0ece3; }
-    .cta-contact {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,.08);
-      display: flex;
-      gap: 3rem;
+    .btn-secondary:hover { border-color: rgba(255,255,255,.4); color: #f0ece3; }
+
+    .cta-right { }
+    .contact-block {
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 1px;
     }
-    .contact-item { }
-    .contact-name {
+    .contact-block-title {
       font-size: .72rem;
-      letter-spacing: .1em;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      color: rgba(240,236,227,.35);
-      margin-bottom: .3rem;
+      color: rgba(240,236,227,.3);
+      margin-bottom: 1.25rem;
     }
-    .contact-tel {
+    .contact-person {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: .65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .contact-person:last-child { border-bottom: none; }
+    .contact-name {
       font-family: var(--serif);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 300;
       color: rgba(240,236,227,.75);
     }
+    .contact-tel {
+      font-size: .85rem;
+      font-weight: 300;
+      color: rgba(240,236,227,.4);
+    }
+    .address-block {
+      padding: 1.5rem 2rem;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .address-title {
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(240,236,227,.3);
+      margin-bottom: .75rem;
+    }
+    .address-text {
+      font-size: .88rem;
+      font-weight: 300;
+      color: rgba(240,236,227,.55);
+      line-height: 1.9;
+    }
 
-    /* FOOTER */
+    /* ─── FOOTER ─── */
     footer {
       background: var(--black);
       padding: 2.5rem 3rem;
@@ -663,7 +773,7 @@
       justify-content: space-between;
       border-top: 1px solid rgba(255,255,255,.06);
     }
-    footer .footer-logo {
+    .footer-logo {
       font-family: var(--serif);
       font-size: 1.1rem;
       font-weight: 300;
@@ -671,12 +781,12 @@
       text-transform: uppercase;
       color: rgba(240,236,227,.4);
     }
-    footer .footer-links {
+    .footer-links {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
-    footer .footer-links a {
+    .footer-links a {
       font-size: .75rem;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -684,43 +794,45 @@
       text-decoration: none;
       transition: color .2s;
     }
-    footer .footer-links a:hover { color: rgba(240,236,227,.7); }
+    .footer-links a:hover { color: rgba(240,236,227,.7); }
 
-    /* ANIMATIONS */
+    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .hero-eyebrow { animation: fadeUp .7s ease both; }
     .hero-title { animation: fadeUp .7s .15s ease both; }
-    .hero-desc { animation: fadeUp .7s .3s ease both; }
+    .hero-tagline { animation: fadeUp .7s .3s ease both; }
     .hero-cta { animation: fadeUp .7s .45s ease both; }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { padding: 7rem 1.5rem 4rem; }
-      .hero-meta { display: none; }
+      .nav-menu { padding: 5rem 1.5rem 2rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { min-height: 90vh; padding: 7rem 1.5rem 4rem; }
+      .hero-right { padding: 3rem 1.5rem; }
+      .hero-right-top { position: static; margin-bottom: 2rem; }
       .container { padding: 0 1.5rem; }
       section { padding: 4rem 0; }
-      .tirage-grid, .cc-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .engagement-grid { grid-template-columns: 1fr 1fr; }
       .section-header { gap: 1.5rem; }
       .section-num { font-size: 2.5rem; }
-      .expertise-inner { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-      .cta-contact { flex-direction: column; gap: 1.5rem; }
+      .atelier-strip-inner { flex-direction: column; }
+      .atelier-strip-visual { width: 100%; }
+      .cta-grid { grid-template-columns: 1fr; gap: 3rem; }
       footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-      footer .footer-links { justify-content: center; }
+      .footer-links { justify-content: center; }
     }
     @media (max-width: 600px) {
-      .benefits-grid { grid-template-columns: 1fr; }
-      .cc-supports { grid-template-columns: 1fr; }
+      .engagement-grid { grid-template-columns: 1fr; }
       .cta-buttons { flex-direction: column; }
     }
 
-
-      @media (width > 960px) {
+    @media (width > 960px) {
     .nav-links {
     display : flex ;
       }
@@ -739,16 +851,16 @@
       }
     }
 
-
   </style>
 
 </head>
+
 <body>
 
-  <!-- Navigation -->
- <nav>
-        <a href="/" class="nav-logo"><img class="nav-logo-img" src="logo-uh5.png" alt="Logo UH5"></a>
-
+   <!-- Navigation -->
+  <nav>
+    <a href="/" class="nav-logo"><img class="nav-logo-img" src="logo-uh5.png" alt="Logo UH5"></a>
+    
 
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -786,173 +898,136 @@
     </div>
   </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grain"></div>
-    
-    <div class="hero-content">
-      <span class="hero-eyebrow">Atelier UH5 — La Madeleine, Lille</span>
-      <h1 class="hero-title">Encadrer<br><em>c'est tout un art</em></h1>
-      <p class="hero-desc">La rigueur d'un maître encadreur et le regard d'une photographe d'art. Pour protéger, magnifier et pérenniser vos œuvres.</p>
-      <a href="#contact" class="hero-cta">
-        Discutons de votre projet <span class="hero-cta-arrow">→</span>
-      </a>
-    </div>
-    
-  </section>
+<h1>Mentions légales</h1>
 
-  <!-- Tirage Fine Art -->
-  <section class="tirage-section">
+   <!-- Qui sommes-nous -->
+  <section class="about-section" id="editeur">
     <div class="container">
       <div class="section-header">
         <div class="section-num">01</div>
         <div>
-          <div class="section-label">Notre spécificité</div>
-          <h2 class="section-title">Un maître encadreur,<br><em>un regard d'artiste</em></h2>
+          <h2 class="section-title">Éditeur du site</h2>
         </div>
       </div>
-      <div class="tirage-grid">
-        <div class="tirage-body">
-          <p>L'encadrement n'est pas une finition — c'est une décision esthétique. Chez UH5, Matthieu Dujardin, maître encadreur, travaille en dialogue permanent avec Laurence Pigeyre, photographe d'art.</p>
-          <p>Cette double expertise — technique et artistique — est ce qui distingue UH5 de toute autre enseigne de la région. Chaque projet est abordé en tenant compte du style de l'œuvre, de son lieu d'exposition et des intentions de son propriétaire.</p>
-          <p>Nous maîtrisons l'ensemble du spectre : des techniques classiques de la conservation jusqu'aux solutions les plus contemporaines, des baguettes fines en métal aux caisses américaines en bois massif.</p>
-
-          
-        </div>
-        <div class="tirage-cards">
-          <div class="tirage-card">
-            <h3>Un regard artistique</h3>
-            <p>Chaque cadre est unique, et destiné à mettre en valeur l'œuvre présentée.</p>
+      
+        <div class="about-body">
+         Raison sociale : UH5 SAS <br>
+        Activité : Laboratoire Fine Art — tirage, encadrement, contrecollage et mise en valeur d'œuvres d'art <br>
+            Siège social : 139 rue des Arts, 59100 Roubaix, France<br>
+            Adresse de réception : En face du 78, rue Saint-Charles, 59110 La Madeleine<br>
+            SIREN : 839 397 098<br>
+            SIRET : 839 397 098 00022<br>
+            RCS : Lille Métropole B 839 397 098<br>
+            Capital social : 41 000 €<br>
+            Présidente : Laurence Pigeyre<br>
+            Téléphone : 03 20 01 50 26<br>
+            Contact : laurence@uh5.fr<br>
+            Site web : uh5.fr
           </div>
-          <div class="tirage-card">
-            <h3>Des bois durables</h3>
-            <p>Nous proposons un large choix d'essences issues d'exploitations responsables.</p>
-          </div>
-          <div class="tirage-card">
-            <h3>Un soin particulier à la conservation des oeuvres</h3>
-            <p>Matériaux au pH neutre et certifiés, verre musée : notre travail vise à la meilleure conservation des œuvres.</div>
-          <div class="tirage-card">
-            <h3>Des formes et des formats</h3>
-            <p>Du mini au très grand, des formes rondes, cintrées ou irrégulières.</p>
-          </div>
-        </div>
+        
       </div>
-    </div>
   </section>
-
-  <!-- Contre-collage -->
-  <section class="contrecollage-section">
+  <section class="about-section" id="hebergeur">
     <div class="container">
       <div class="section-header">
         <div class="section-num">02</div>
         <div>
-          <div class="section-label">Matériaux</div>
-          <h2 class="section-title">La qualité au cœur<br><em>de chaque choix</em></em></h2>
+          <h2 class="section-title">Hébergement</h2>
         </div>
       </div>
-      <div class="cc-grid">
-        <div class="cc-body">
-          <p>Le choix des matériaux est au cœur de chaque encadrement UH5. Nous sélectionnons chaque composant pour sa qualité, sa compatibilité avec l'œuvre et sa durabilité dans le temps.</p>
-          <p>Bois, métal, baguettes moulurées, verres anti-reflets ou musée, passe-partout conservation — chaque élément est pensé pour protéger et magnifier l'œuvre qu'il reçoit.</p>
-          <p>La connaissance des arts, des styles et des matières est essentielle pour déterminer les matériaux à utiliser. C'est cette expertise que nous mettons à votre service.</p>
       
-          
-        </div>
-        <div class="cc-supports">
-
-
-            <div class="cc-support">Bois naturel & laqué</div>
-            <div class="cc-support">Verre musée anti-reflet</div>
-            <div class="cc-support">Plexiglas conservation</div>
-            <div class="cc-support">Passe-partout pH neutre</div>
-    
+        <div class="about-body">
+         Hébergeur : Cloudflare, Inc.<br>
+            Adresse : 101 Townsend St, San Francisco, CA 94107, États-Unis<br>
+            Site : cloudflare.com<br>
+            Service : Cloudflare Pages
           </div>
-      </div>
-    </div>
+        
+       </div> 
   </section>
-
-  <!-- Benefits -->
-  <section class="benefits-section">
+  <section class="about-section" id="Propriété intellectuelle">
     <div class="container">
       <div class="section-header">
-        <div class="section-num" style="color: var(--light-gray);">03</div>
+        <div class="section-num">03</div>
         <div>
-          <div class="section-label">Ce que nous faisons de mieux</div>
-          <h2 class="section-title">Pourquoi UH5 ?</h2>
+          <h2 class="section-title">Propriété intellectuelle</h2>
         </div>
       </div>
-      <div class="benefits-grid">
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            </svg>
+     
+        <div class="about-body">
+        
+         L'ensemble du contenu de ce site (textes, photographies, visuels, logo, maquettes) est la propriété exclusive de UH5 SAS ou de ses ayants droit, et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable est strictement interdite.
+
           </div>
-          <h3>Un conseil esthétique éclairé</h3>
-          <p>De la conception à la fabrication, nos encadrements sont pensés pour l'œuvre, pas l'inverse.</p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-            </svg>
-          </div>
-          <h3>Une protection dans le temps</h3>
-          <p>Matériaux pH neutres, verres de conservation, montage réversible sur demande. Vos œuvres traversent le temps.</p>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h3>Un atelier innovant et tout-en-un</h3>
-          <p>UH5 s'adapte à vos projets en proposant des cadres qui sortent du lot.</p>
-       </p>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3>Un interlocuteur unique</h3>
-          <p>Un seul interlocuteur à votre écoute, de la commande à la livraison, pour un projet parfaitement cohérent.</p>
-        </div>
-      </div>
-    </div>
   </section>
-
-
-
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
+  <section class="about-section" id="Données personnelles">
     <div class="container">
-      <div class="cta-inner">
-        <div class="cta-eyebrow">Passons à l'action</div>
-        <h2 class="cta-title">Discutons de<br><em>votre projet</em></h2>
-        <p class="cta-text">Photographes, galeries, collectionneurs — apportez votre fichier ou votre œuvre, nous vous proposons une consultation sans engagement dans notre atelier à La Madeleine, près de Lille.</p>
-        <div class="cta-buttons">
-          <a href="mailto:contact@uh5.fr" class="btn-primary">Nous contacter →</a>
-          
-        </div>
-        <div class="cta-contact">
-          <div class="contact-item">
-            <div class="contact-name">Laurence Pigeyre</div>
-            <div class="contact-tel">+33 6 43 56 63 55</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-name">Matthieu Dujardin</div>
-            <div class="contact-tel">+33 6 10 52 23 51</div>
-          </div>
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div>
+          <h2 class="section-title">Données personnelles</h2>
         </div>
       </div>
-    </div>
+     
+        <div class="about-body">
+      UH5 SAS collecte des données personnelles dans le cadre de ses activités commerciales (devis, commandes, facturation). Conformément au Règlement Général sur la Protection des Données (RGPD — UE 2016/679) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition aux données vous concernant.
+            Pour exercer ces droits : laurence@uh5.fr
+            Aucune donnée n'est cédée à des tiers sans votre consentement explicite.
+          </div>
+      </div>
   </section>
+
+   <section class="about-section" id="Cookies">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div>
+          <h2 class="section-title">Cookies</h2>
+        </div>
+      </div>
+     
+        <div class="about-body">
+         Ce site est susceptible d'utiliser des cookies à des fins de mesure d'audience et d'amélioration de l'expérience utilisateur. Conformément à la réglementation CNIL, vous pouvez accepter ou refuser leur dépôt lors de votre première visite.<br><br>
+  </div>
+  </div>
+  </section>
+
+   <section class="about-section" id="Responsabilité">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <div>
+          <h2 class="section-title">Responsabilité</h2>
+        </div>
+      </div>
+    
+        <div class="about-body">
+         UH5 SAS s'efforce de maintenir les informations publiées sur ce site exactes et à jour, mais ne saurait être tenue responsable des erreurs ou omissions. Les liens vers des sites tiers sont fournis à titre informatif ; UH5 SAS n'est pas responsable de leur contenu.<br><br>
+           </div>
+          </div>
+  </section>
+
+   <section class="about-section" id="Droit applicable">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <div>
+          <h2 class="section-title">Droit applicable</h2>
+        </div>
+      </div>
+      
+        <div class="about-body">
+          Les présentes mentions légales sont soumises au droit français. Tout litige relève de la compétence des tribunaux du ressort de Lille Métropole.
+              </div>
+            </div>
+     
+        </section>
+
 
   <!-- Footer -->
-  <footer>
+
+      <footer>
     <span class="footer-logo"><img class="nav-logo-img" src="logo-uh5-w.png" alt="Logo UH5"></span>
     
     <ul class="footer-links">
