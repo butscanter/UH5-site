@@ -3,757 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tirage Fine Art & Contre-collage à Lille – UH5 Roubaix</title>
-  <meta name="description" content="UH5 réalise vos tirages Fine Art et contre-collages sur-mesure à Lille. Qualité muséale, encres d'archivage, grands formats jusqu'à 160 cm. Atelier à La Madeleine (Nord).">
-  <meta name="keywords" content="tirage fine art Lille, impression pigmentaire Nord, contre-collage photo Hauts-de-France, tirage qualité muséale Roubaix, grand format photographique, impression archivage photo">
+  <title>Tirage Fine Art & Contrecollage à Lille – UH5 Roubaix</title>
+  <meta name="description" content="UH5 réalise vos tirages Fine Art et contrecollages sur-mesure à Lille. Qualité muséale, encres d'archivage, grands formats jusqu'à 160 cm. Atelier à La Madeleine (Nord).">
+  <meta name="keywords" content="tirage fine art Lille, impression pigmentaire Nord, contrecollage photo Hauts-de-France, tirage qualité muséale Roubaix, grand format photographique, impression archivage photo">
   <link rel="canonical" href="https://www.uh5.fr/tirage-contrecollag.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  
- <style>
-    :root {
-      --black: #0e0d0c;
-      --off-white: #f5f3ee;
-      --warm-gray: #8a8479;
-      --light-gray: #e8e5de;
-      --accent: #b5a48a;
-      --accent-dark: #7a6b55;
-      --text: #2a2925;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--sans);
-      background: var(--off-white);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 3rem;
-      background: rgba(245, 243, 238, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--light-gray);
-    }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      position: relative;
-      z-index: 201;
-    }
-    .nav-logo-img {
-      size: 48px;
-    }
-
-    /* Burger button & nav links */
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: .78rem;
-      font-weight: 400;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-
-    .nav-burger {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 32px;
-      height: 32px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      position: relative;
-      z-index: 201;
-    }
-    .nav-burger span {
-      display: block;
-      height: 1px;
-      background: var(--black);
-      transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s, width .3s;
-      transform-origin: center;
-    }
-    .nav-burger span:nth-child(1) { width: 24px; }
-    .nav-burger span:nth-child(2) { width: 16px; }
-    .nav-burger span:nth-child(3) { width: 20px; }
-
-    /* Open state */
-    .nav-burger.is-open span:nth-child(1) {
-      width: 22px;
-      transform: translateY(6px) rotate(45deg);
-    }
-    .nav-burger.is-open span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-    .nav-burger.is-open span:nth-child(3) {
-      width: 22px;
-      transform: translateY(-6px) rotate(-45deg);
-    }
-
-    /* Menu overlay */
-    .nav-menu {
-      position: fixed;
-      inset: 0;
-      z-index: 199;
-      background: rgba(245, 243, 238, 0.98);
-      backdrop-filter: blur(20px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 3rem 3rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .35s cubic-bezier(.4,0,.2,1);
-    }
-    .nav-menu.is-open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .nav-menu ul {
-      list-style: none;
-      margin-bottom: auto;
-    }
-    .nav-menu ul li {
-      overflow: hidden;
-    }
-    .nav-menu ul li a {
-      display: block;
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 300;
-      color: var(--black);
-      text-decoration: none;
-      line-height: 1.1;
-      padding: .6rem 0;
-      border-bottom: 1px solid var(--light-gray);
-      transform: translateY(30px);
-      opacity: 0;
-      transition: color .2s, transform .4s cubic-bezier(.4,0,.2,1), opacity .4s cubic-bezier(.4,0,.2,1);
-    }
-    .nav-menu ul li a em {
-      font-style: italic;
-      color: var(--accent-dark);
-    }
-    .nav-menu.is-open ul li a {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    .nav-menu.is-open ul li:nth-child(1) a { transition-delay: .05s; }
-    .nav-menu.is-open ul li:nth-child(2) a { transition-delay: .1s; }
-    .nav-menu.is-open ul li:nth-child(3) a { transition-delay: .15s; }
-    .nav-menu.is-open ul li:nth-child(4) a { transition-delay: .2s; }
-    .nav-menu.is-open ul li:nth-child(5) a { transition-delay: .25s; }
-    .nav-menu ul li a:hover { color: var(--accent-dark); }
-    .nav-menu ul li a.active { color: var(--accent-dark); }
-
-    .nav-menu-footer {
-      border-top: 1px solid var(--light-gray);
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .4s .3s, transform .4s .3s;
-    }
-    .nav-menu.is-open .nav-menu-footer {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .nav-menu-address {
-      font-size: .75rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      line-height: 2;
-    }
-    .nav-menu-tel {
-      text-align: right;
-      font-size: .78rem;
-      font-weight: 300;
-      color: var(--warm-gray);
-      line-height: 2;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: flex-end;
-      padding: 7rem 3rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, #1a1814 0%, #2e2a22 60%, #3d3628 100%);
-    }
-    .hero-grain {
-      position: absolute;
-      inset: 0;
-      opacity: .04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 180px;
-    }
-    .hero-line {
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 48%;
-      width: 1px;
-      background: rgba(181,164,138,.15);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      width: 100%;
-      margin: 0 auto;
-    }
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: .72rem;
-      font-weight: 400;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 300;
-      line-height: 1.05;
-      color: #f0ece3;
-      margin-bottom: 1.5rem;
-      max-width: 700px;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-desc {
-      font-size: .95rem;
-      font-weight: 300;
-      color: rgba(240,236,227,.6);
-      max-width: 440px;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: .75rem;
-      padding: .85rem 2rem;
-      background: var(--accent);
-      color: var(--black);
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background .2s, gap .2s;
-    }
-    .hero-cta:hover { background: #c4b49a; gap: 1rem; }
-    .hero-cta-arrow { font-size: 1rem; }
-    .hero-meta {
-      position: absolute;
-      right: 3rem;
-      bottom: 5rem;
-      text-align: right;
-      color: rgba(240,236,227,.35);
-      font-size: .75rem;
-      letter-spacing: .1em;
-      line-height: 2;
-    }
-
-    /* LAYOUT */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-
-    /* SECTION BASE */
-    section { padding: 6rem 0; }
-    .section-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 4rem;
-      margin-bottom: 4rem;
-    }
-    .section-num {
-      font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 300;
-      color: var(--light-gray);
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: -.5rem;
-    }
-    .section-label {
-      font-size: .72rem;
-      font-weight: 400;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      margin-bottom: .6rem;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--black);
-    }
-    .section-title em { font-style: italic; color: var(--accent-dark); }
-
-    /* TIRAGE SECTION */
-    .tirage-section { background: var(--off-white); }
-    .tirage-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .tirage-body p {
-      font-size: .95rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: #4a4740;
-      margin-bottom: 1.25rem;
-    }
-    .specs-list {
-      list-style: none;
-      margin-top: 2rem;
-      border-top: 1px solid var(--light-gray);
-      padding-top: 1.5rem;
-    }
-    .specs-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: .65rem 0;
-      border-bottom: 1px solid var(--light-gray);
-      font-size: .85rem;
-    }
-    .specs-list .spec-key {
-      font-weight: 300;
-      color: var(--warm-gray);
-      letter-spacing: .05em;
-    }
-    .specs-list .spec-val {
-      font-weight: 400;
-      color: var(--text);
-      text-align: right;
-    }
-    .tirage-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .tirage-card {
-      padding: 1.5rem;
-      border: 1px solid var(--light-gray);
-      background: #fff;
-      position: relative;
-      transition: border-color .2s;
-    }
-    .tirage-card:hover { border-color: var(--accent); }
-    .tirage-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 2px; height: 100%;
-      background: var(--accent);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform .25s;
-    }
-    .tirage-card:hover::before { transform: scaleY(1); }
-    .tirage-card h3 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: .4rem;
-      color: var(--black);
-    }
-    .tirage-card p {
-      font-size: .85rem;
-      font-weight: 300;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    /* CONTRE-COLLAGE */
-    .contrecollage-section {
-      background: var(--black);
-      color: #f0ece3;
-    }
-    .contrecollage-section .section-num { color: rgba(255,255,255,.06); }
-    .contrecollage-section .section-label { color: var(--accent); }
-    .contrecollage-section .section-title { color: #f0ece3; }
-    .cc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .cc-body p {
-      font-size: .95rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: rgba(240,236,227,.65);
-      margin-bottom: 1.25rem;
-    }
-    .cc-supports {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .75rem;
-      margin-top: 2rem;
-    }
-    .cc-support {
-      padding: 1rem 1.25rem;
-      border: 1px solid rgba(255,255,255,.1);
-      font-size: .85rem;
-      font-weight: 300;
-      color: rgba(240,236,227,.8);
-      letter-spacing: .03em;
-    }
-    .cc-process {
-      padding-left: 2rem;
-      border-left: 1px solid rgba(181,164,138,.2);
-    }
-    .cc-process-title {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--accent);
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    .cc-step {
-      display: flex;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .cc-step-num {
-      font-family: var(--serif);
-      font-size: .85rem;
-      font-weight: 300;
-      color: rgba(181,164,138,.5);
-      padding-top: .1rem;
-      flex-shrink: 0;
-      width: 24px;
-    }
-    .cc-step-content h4 {
-      font-size: .9rem;
-      font-weight: 400;
-      color: #f0ece3;
-      margin-bottom: .25rem;
-    }
-    .cc-step-content p {
-      font-size: .83rem;
-      font-weight: 300;
-      color: rgba(240,236,227,.5);
-      line-height: 1.7;
-      margin-bottom: 0;
-    }
-
-    /* BENEFITS */
-    .benefits-section { background: #fff; }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-    }
-    .benefit-item {
-      padding: 2.5rem 1.75rem;
-      background: var(--off-white);
-      transition: background .2s;
-    }
-    .benefit-item:hover { background: #eceae3; }
-    .benefit-icon {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .benefit-icon svg { stroke: var(--accent-dark); }
-    .benefit-item h3 {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--black);
-      margin-bottom: .5rem;
-    }
-    .benefit-item p {
-      font-size: .83rem;
-      font-weight: 300;
-      color: var(--warm-gray);
-      line-height: 1.75;
-    }
-
-    /* EXPERTISE BAR */
-    .expertise-bar {
-      padding: 4rem 0;
-      background: var(--off-white);
-      border-top: 1px solid var(--light-gray);
-      border-bottom: 1px solid var(--light-gray);
-    }
-    .expertise-inner {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-    }
-    .expertise-label {
-      font-size: .72rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .expertise-items {
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .expertise-item-text {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text);
-    }
-    .expertise-divider {
-      color: var(--light-gray);
-      font-size: .75rem;
-    }
-
-    /* CTA */
-    .cta-section {
-      background: #1e1c18;
-      padding: 7rem 0;
-    }
-    .cta-inner {
-      max-width: 600px;
-    }
-    .cta-eyebrow {
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-    .cta-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 300;
-      color: #f0ece3;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-    .cta-title em { font-style: italic; }
-    .cta-text {
-      font-size: .93rem;
-      font-weight: 300;
-      color: rgba(240,236,227,.55);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .9rem 2.25rem;
-      background: var(--accent);
-      color: var(--black);
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .btn-primary:hover { background: #c4b49a; }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .9rem 2.25rem;
-      border: 1px solid rgba(255,255,255,.2);
-      color: rgba(240,236,227,.7);
-      font-size: .82rem;
-      font-weight: 400;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color .2s, color .2s;
-    }
-    .btn-secondary:hover { border-color: rgba(255,255,255,.5); color: #f0ece3; }
-    .cta-contact {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,.08);
-      display: flex;
-      gap: 3rem;
-    }
-    .contact-item { }
-    .contact-name {
-      font-size: .72rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(240,236,227,.35);
-      margin-bottom: .3rem;
-    }
-    .contact-tel {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: rgba(240,236,227,.75);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--black);
-      padding: 2.5rem 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    footer .footer-logo {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(240,236,227,.4);
-    }
-    footer .footer-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    footer .footer-links a {
-      font-size: .75rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: rgba(240,236,227,.3);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    footer .footer-links a:hover { color: rgba(240,236,227,.7); }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero-eyebrow { animation: fadeUp .7s ease both; }
-    .hero-title { animation: fadeUp .7s .15s ease both; }
-    .hero-desc { animation: fadeUp .7s .3s ease both; }
-    .hero-cta { animation: fadeUp .7s .45s ease both; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { padding: 7rem 1.5rem 4rem; }
-      .hero-meta { display: none; }
-      .container { padding: 0 1.5rem; }
-      section { padding: 4rem 0; }
-      .tirage-grid, .cc-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .benefits-grid { grid-template-columns: 1fr 1fr; }
-      .section-header { gap: 1.5rem; }
-      .section-num { font-size: 2.5rem; }
-      .expertise-inner { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-      .cta-contact { flex-direction: column; gap: 1.5rem; }
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-      footer .footer-links { justify-content: center; }
-    }
-    @media (max-width: 600px) {
-      .benefits-grid { grid-template-columns: 1fr; }
-      .cc-supports { grid-template-columns: 1fr; }
-      .cta-buttons { flex-direction: column; }
-    }
-
-
-      @media (width > 960px) {
-    .nav-links {
-    display : flex ;
-      }
-    .nav-burger {
-    display : none ;
-      }
-    }
-
-     @media (width < 960px) {
-   
-    .nav-links {
-    display : none ;
-      }
-    .nav-burger {
-    display : flex ;
-      }
-    }
-
-
-  </style>
-
+  <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
 
   <!-- Navigation -->
- <nav>
-        <a href="/" class="nav-logo"><img class="nav-logo-img" src="logo-uh5.png" alt="Logo UH5"></a>
-
+  <nav>
+    <a href="/" class="nav-logo"><img class="nav-logo-img" src="logo-uh5.png" alt="Logo UH5"></a>
+    
 
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="tirage-contrecollage.html">Tirage & Contre-collage</a></li>
+      <li><a href="tirage-contrecollage.html">Tirage & Contrecollage</a></li>
       <li><a href="encadrement.html">Encadrement</a></li>
-      <li><a href="xx">Journal</a></li>
+     <!-- <li><a href="none">Journal</a></li> -->
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -768,9 +39,9 @@
   <div class="nav-menu" id="nav-menu" role="dialog" aria-label="Navigation principale">
     <ul>
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="tirage-contrecollage.html">Tirage & Contre-collage</a></li>
+      <li><a href="tirage-contrecollage.html">Tirage & Contrecollage</a></li>
       <li><a href="encadrement.html">Encadrement</a></li>
-      <li><a href="xx">Journal</a></li>
+    <!--  <li><a href="xx">Journal</a></li> -->
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-menu-footer">
@@ -785,21 +56,25 @@
     </div>
   </div>
 
-  <!-- Hero -->
+  <!-- Hero split -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grain"></div>
-    
-    <div class="hero-content">
-      <span class="hero-eyebrow">Atelier UH5 — La Madeleine, Lille</span>
-      <h1 class="hero-title">Tirage Fine Art<br><em>& Contre-collage</em><br>sur-mesure</h1>
-      <p class="hero-desc">Impression pigmentaire de qualité muséale, encres d'archivage, maîtrise des grands formats. Pour les photographes, galeries et collectionneurs exigeants.</p>
-      <a href="#contact" class="hero-cta">
-        Discutons de votre projet <span class="hero-cta-arrow">→</span>
-      </a>
+    <div class="hero-left">
+      <div class="hero-grain"></div>
+      <div class="hero-left-content">
+        <span class="hero-eyebrow">Atelier UH5 — La Madeleine, Lille</span>
+        <h1 class="hero-title">Tirage Fine Art<br><em>& Contrecollage</em><br>sur-mesure</h1>
+         <p class="hero-tagline">Impression pigmentaire de qualité muséale, encres d'archivage, maîtrise des grands formats. Pour les photographes, galeries et collectionneurs exigeants.</p>
+         <a href="#contact" class="hero-cta">Nous contacter →</a>
+      </div>
     </div>
-    
+     <div class="hero-right">
+      <div class="hero-right-image-container">
+      <img src="petillon_DxO2.jpg" alt="Atelier UH5 — Encadrement sur-mesure" class="hero-right-image">
+       <p class="hero-legende">Oeuvre de Charles Pétillon, encadrement blanc sur blanc.</p>
+      </div>
+    </div>
   </section>
+
 
   <!-- Tirage Fine Art -->
   <section class="tirage-section">
@@ -815,7 +90,7 @@
         <div class="tirage-body">
           <p>L'impression pigmentaire utilisée par UH5 intègre des encres d'archivage sans solvant, résistantes aux effets environnementaux et à l'épreuve du temps. Sur une large gamme de papiers naturels et canvas, chaque tirage est conçu comme une œuvre à part entière.</p>
           <p>Notre photographe d'art intervient sur la gestion colorimétrique et la préparation de vos fichiers pour optimiser le rendu lumineux de votre image — une compétence rare qui fait la différence, notamment sur les grands formats.</p>
-          <p>Ce savoir-faire, couplé à nos capacités de montage et de contre-collage, rend possibles les projets photographiques les plus ambitieux.</p>
+          <p>Ce savoir-faire, couplé à nos capacités de montage et de contrecollage, rend possibles les projets photographiques les plus ambitieux.</p>
 
           <ul class="specs-list">
             <li>
@@ -866,20 +141,20 @@
     </div>
   </section>
 
-  <!-- Contre-collage -->
+  <!-- Contrecollage -->
   <section class="contrecollage-section">
     <div class="container">
       <div class="section-header">
         <div class="section-num">02</div>
         <div>
           <div class="section-label">Montage & finition</div>
-          <h2 class="section-title">Contre-collage :<br><em>solidité, élégance, durabilité</em></h2>
+          <h2 class="section-title">Contrecollage :<br><em>solidité, élégance, durabilité</em></h2>
         </div>
       </div>
       <div class="cc-grid">
         <div class="cc-body">
-          <p>Le contre-collage consiste en un assemblage de plusieurs couches — finition, support, protection — visant à apporter à l'œuvre une belle épaisseur et une présence physique inégalée.</p>
-          <p>Notre monteur-colleur, formé à l'école du tirage argentique, réalise chaque contre-collage sans solvant sur support rigide. L'expertise technique est totale : planéité parfaite, adhésion durable, rendu impeccable sur tous les formats.</p>
+          <p>Le contrecollage consiste en un assemblage de plusieurs couches — finition, support, protection — visant à apporter à l'œuvre une belle épaisseur et une présence physique inégalée.</p>
+          <p>Notre monteur-colleur, formé à l'école du tirage argentique, réalise chaque contrecollage sans solvant sur support rigide. L'expertise technique est totale : planéité parfaite, adhésion durable, rendu impeccable sur tous les formats.</p>
           <p>L'œuvre peut ensuite être encadrée ou laissée telle quelle, avec ou sans effets de bordure, selon les intentions du projet.</p>
 
           <div class="cc-supports">
@@ -917,7 +192,7 @@
           <div class="cc-step">
             <div class="cc-step-num">04</div>
             <div class="cc-step-content">
-              <h4>Contre-collage</h4>
+              <h4>Contrecollage</h4>
               <p>Montage sans solvant, planéité parfaite, bords soignés.</p>
             </div>
           </div>
@@ -978,7 +253,7 @@
             </svg>
           </div>
           <h3>Un interlocuteur unique</h3>
-          <p>Tirage, contre-collage et encadrement dans le même atelier. Cohérence totale du projet, de A à Z.</p>
+          <p>Tirage, contrecollage et encadrement dans le même atelier. Cohérence totale du projet, de A à Z.</p>
         </div>
       </div>
     </div>
@@ -986,25 +261,41 @@
 
 
 
-  <!-- CTA -->
+   <!-- CTA / Contact -->
   <section class="cta-section" id="contact">
     <div class="container">
-      <div class="cta-inner">
-        <div class="cta-eyebrow">Passons à l'action</div>
-        <h2 class="cta-title">Discutons de<br><em>votre projet</em></h2>
-        <p class="cta-text">Photographes, galeries, collectionneurs — apportez votre fichier ou votre œuvre, nous vous proposons une consultation sans engagement dans notre atelier à La Madeleine, près de Lille.</p>
-        <div class="cta-buttons">
-          <a href="mailto:contact@uh5.fr" class="btn-primary">Nous contacter →</a>
-          
+      <div class="cta-grid">
+        <div class="cta-left">
+          <div class="cta-eyebrow">Passons à l'action</div>
+          <h2 class="cta-title">Discutons de<br><em>votre projet</em></h2>
+          <p class="cta-text">Photographes, galeries, collectionneurs, décorateurs — apportez votre fichier ou votre œuvre. Nous vous proposons une consultation sans engagement dans notre atelier à La Madeleine.</p>
+          <div class="cta-buttons">
+            <a href="/cdn-cgi/l/email-protection#90f3fffee4f1f3e4d0e5f8a5bef6e2" class="btn-primary">Nous contacter →</a>
+            </div>
         </div>
-        <div class="cta-contact">
-          <div class="contact-item">
-            <div class="contact-name">Laurence Pigeyre</div>
-            <div class="contact-tel">+33 6 43 56 63 55</div>
+        <div class="cta-right">
+          <div class="contact-block">
+            <div class="contact-block-title">Nous joindre</div>
+            <div class="contact-person">
+              <span class="contact-name">Par mail</span>
+              <span class="contact-tel">contact@uh5.fr</span>
+            </div>
+            <div class="contact-person">
+              <span class="contact-name">Laurence Pigeyre</span>
+              <span class="contact-tel">+33 6 43 56 63 55</span>
+            </div>
+            <div class="contact-person">
+              <span class="contact-name">Matthieu Dujardin</span>
+              <span class="contact-tel">+33 6 10 52 23 51</span>
+            </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-name">Matthieu Dujardin</div>
-            <div class="contact-tel">+33 6 10 52 23 51</div>
+          <div class="address-block">
+            <div class="address-title">Atelier</div>
+            <div class="address-text">
+              85, rue Saint-Charles<br>
+              59110 La Madeleine<br>
+              GPS : en face du 78, rue Saint-Charles
+            </div>
           </div>
         </div>
       </div>
@@ -1015,14 +306,11 @@
   <footer>
     <span class="footer-logo"><img class="nav-logo-img" src="logo-uh5-w.png" alt="Logo UH5"></span>
     
-    <ul class="footer-links">
-      <li><a href="home.html">Accueil</a></li>
-      <li><a href="tirage-contrecollage.html">Tirage & Contre-collage</a></li>
-      <li><a href="encadrement.html">Encadrement</a></li>
-      <li><a href="xx">Journal</a></li>
-      <li><a href="#contact">Contact</a></li>
+     <ul class="footer-links">
+      <li><a href="https://www.instagram.com/uh5_roubaix/">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/uh5/">Linkedin</a></li>
       <li><a href="mentions_legales.html">Mentions légales</a></li>
-    </ul>
+      </ul>
   </footer>
 
 
