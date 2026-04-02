@@ -994,6 +994,9 @@
       font-size: .85rem;
       font-weight: 300;
       color: rgba(240,236,227,.4);
+      text-decoration: none;
+      
+      ;
     }
     .address-block {
       padding: 1.5rem 2rem;
